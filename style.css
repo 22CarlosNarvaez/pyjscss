@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Corazón */
+.heart {
+  width: 120px;
+  height: 120px;
+  background: red;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 0 auto 30px;
+  animation: pulse 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 120px;
+  height: 120px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -60px;
+  left: 0;
+}
+
+.heart::after {
+  left: 60px;
+  top: 0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.1) rotate(-45deg); }
+  100% { transform: scale(1) rotate(-45deg); }
+}
+
+/* Virtudes */
+.virtue {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  min-height: 40px;
+  animation: fade 3s infinite;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Tiempo */
+.time p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.time h2 {
+  margin: 5px 0 0;
+  font-size: 1.4rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .heart {
+    width: 90px;
+    height: 90px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 90px;
+    height: 90px;
+  }
+
+  .heart::before {
+    top: -45px;
+  }
+
+  .heart::after {
+    left: 45px;
+  }
+
+  .virtue {
+    font-size: 1.2rem;
+  }
+}
